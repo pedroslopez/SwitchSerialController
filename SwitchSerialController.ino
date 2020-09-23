@@ -97,21 +97,24 @@ void sendControllerData() {
   // Press/Release buttons
   NSGamepad.buttons(pressedButtons);
 
-  // Serial reply
-  Serial1.print("BTN ");
-  Serial1.print(pressedButtons, BIN);
-
-  Serial1.print(" LX ");
-  Serial1.print(leftStickX, BIN);
-
-  Serial1.print(" LY ");
-  Serial1.print(leftStickY, BIN);
-
-  Serial1.print(" RX ");
-  Serial1.print(rightStickX, BIN);
-
-  Serial1.print(" RY ");
-  Serial1.println(rightStickY, BIN);
-
+  // Send report
   NSGamepad.write();
+  
+  // Serial reply
+  Serial1.println("OK");
+//  Serial1.print("BTN ");
+//  Serial1.print(pressedButtons, BIN);
+//
+//  Serial1.print(" LX ");
+//  Serial1.print(leftStickX, BIN);
+//
+//  Serial1.print(" LY ");
+//  Serial1.print(leftStickY, BIN);
+//
+//  Serial1.print(" RX ");
+//  Serial1.print(rightStickX, BIN);
+//
+//  Serial1.print(" RY ");
+//  Serial1.println(rightStickY, BIN);
+
 }
